@@ -5,6 +5,8 @@ import employeepackage.Employeemanagement.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/employee")
 @RestController
 public class EmployeeController {
@@ -19,6 +21,11 @@ public class EmployeeController {
     public String AddEmployee(@RequestBody EmployeeDTO employeeDTO){
        return employeeService.AddEmployeelogic(employeeDTO);
 
+    }
+
+    @GetMapping("/allemployee")
+    public List<EmployeeDTO> Displayeployee(){
+        return employeeService.Employeelogic();
     }
 
 }
