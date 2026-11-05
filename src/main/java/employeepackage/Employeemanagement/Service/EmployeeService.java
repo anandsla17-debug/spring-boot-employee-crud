@@ -8,4 +8,5 @@ public interface EmployeeService {
     public String AddEmployeelogic(EmployeeDTO employeeDTO);
     public List<EmployeeDTO> Employeelogic();
     public String Employeeupdate(EmployeeDTO employeeDTO);
+    public String Deleteemployee(int id);
 }

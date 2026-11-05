@@ -67,9 +67,24 @@ public String Employeeupdate(EmployeeDTO employeeDTO){
             return "not updated";
         }
 
+
+
 }
 
 
+@Override
+    public String Deleteemployee(int id){
+Optional<Employeemodel> check= employeeRespository.findById(id);
+if(check.isPresent())
+{
+    employeeRespository.deleteByEmpid(id);
+    return "employee data is deleted";
+}
+else {
+    return  "employee data in present in database";
+}
+
+    }
 
 
 }

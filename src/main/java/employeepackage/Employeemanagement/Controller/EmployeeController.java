@@ -46,4 +46,11 @@ public class EmployeeController {
     public String UpdateEmployee(@RequestBody  EmployeeDTO employeeDTO){
         return  employeeService.Employeeupdate(employeeDTO);
     }
+
+
+    @DeleteMapping("/delete/{empid}")
+    public String DeleteEmployee(@PathVariable(name = "empid") int empid){
+        return  employeeService.Deleteemployee(empid);
+
+    }
 }
