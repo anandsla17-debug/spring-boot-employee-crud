@@ -41,4 +41,9 @@ public class EmployeeController {
         return employeeService.Employeelogic();
     }
 
+
+    @PutMapping("/update")
+    public String UpdateEmployee(@RequestBody  EmployeeDTO employeeDTO){
+        return  employeeService.Employeeupdate(employeeDTO);
+    }
 }

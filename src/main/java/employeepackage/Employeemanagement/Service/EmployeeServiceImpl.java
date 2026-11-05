@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
@@ -46,6 +47,27 @@ set.setYearofdays(gets.getYearofdays());
 }
 
 
+@Override
+public String Employeeupdate(EmployeeDTO employeeDTO){
+        Optional<Employeemodel> update=employeeRespository.findById(employeeDTO.getEmpid());
+
+        if(update.isPresent()){
+             Employeemodel sets=update.get();
+             sets.setEmployeename(employeeDTO.getEmployeename());
+            sets.setAge(employeeDTO.getAge());
+            sets.setPassword(employeeDTO.getPassword());
+            sets.setSalary(employeeDTO.getSalary());
+            sets.setShifttime(employeeDTO.getShifttime());
+            sets.setYearofdays(employeeDTO.getYearofdays());
+            sets.setPhone(employeeDTO.getPhone());
+            employeeRespository.save(sets);
+            return "updated";
+        }
+        else {
+            return "not updated";
+        }
+
+}
 
 
 
