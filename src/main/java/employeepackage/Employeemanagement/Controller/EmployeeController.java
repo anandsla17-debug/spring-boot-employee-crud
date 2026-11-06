@@ -53,4 +53,9 @@ public class EmployeeController {
         return  employeeService.Deleteemployee(empid);
 
     }
+
+    @GetMapping("/displayemp/{id}")
+    public List<EmployeeDTO> Displayid(@PathVariable(name = "id") int id){
+        return employeeService.employeedisplayid(id);
+    }
 }

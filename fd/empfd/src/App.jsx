@@ -37,7 +37,7 @@ try {
 
  return(
   <>
-<div className='container border border-primary rounded p-3 mt-2'>
+<div className='container border border-primary rounded p-3 mt-2' style={{width:"300px"}}>
   <p className='h4 text-center'>Employee form</p>
   <input className='form-control mt-2' type="text" onChange={(e)=>setname(e.target.value)} placeholder='Enter your name'></input>
   <input className='form-control mt-2' type='number' onChange={(e)=>setage(e.target.value)} placeholder='Enter your age'></input>

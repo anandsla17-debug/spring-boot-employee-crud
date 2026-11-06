@@ -86,5 +86,34 @@ else {
 
     }
 
+    @Override
+    public List<EmployeeDTO> employeedisplayid(int id){
+        Optional<Employeemodel> collect= employeeRespository.findById(id);
+        List<EmployeeDTO> transfer= new ArrayList<>();
+        if(collect.isPresent()) {
+            Employeemodel gets = collect.get();
+            EmployeeDTO set = new EmployeeDTO();
+            set.setEmpid(gets.getEmpid());
+            set.setEmployeename(gets.getEmployeename());
+            set.setAge(gets.getAge());
+            set.setPhone(gets.getPhone());
+            set.setSalary(gets.getSalary());
+            set.setShifttime(gets.getShifttime());
+            set.setYearofdays(gets.getYearofdays());
+            transfer.add(set);
+
+        }else{
+            EmployeeDTO set = new EmployeeDTO();
+            set.setEmpid(0);
+            set.setEmployeename("not present");
+            set.setAge((byte)0);
+            set.setPhone(0);
+            set.setSalary(0);
+            set.setShifttime("not present");
+            set.setYearofdays(0);
+            transfer.add(set);
+        }
+        return transfer;
+    }
 
 }

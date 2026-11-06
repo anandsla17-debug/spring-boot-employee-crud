@@ -9,4 +9,5 @@ public interface EmployeeService {
     public List<EmployeeDTO> Employeelogic();
     public String Employeeupdate(EmployeeDTO employeeDTO);
     public String Deleteemployee(int id);
+    public List<EmployeeDTO> employeedisplayid(int id);
 }
