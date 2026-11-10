@@ -29,4 +29,10 @@ public class Admincontroller {
         }
 
     }
+
+    @PostMapping("/login")
+    public String Login(@RequestBody AdminDto adminDto){
+        return adminService.loginlogic(adminDto);
+
+    }
 }
