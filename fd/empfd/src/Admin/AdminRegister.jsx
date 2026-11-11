@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function AdminRegister(){
 
     const[id,setid]=useState("");
     const[name,setname]=useState("");
     const[password,setpassword]=useState("");
-
+const navigate=useNavigate();
     const registerlogic=async()=>{
         const admin={
             adminid:id,
@@ -20,10 +20,14 @@ function AdminRegister(){
 
             if(datas.adminid=="admin id already stored"){
             alert(datas.adminid);
+             console.log(response);
 
-            console.log(response);
+           
+
+
             }else{
                 alert("admin reg updated " +datas.adminid+ " adminid stored")
+                navigate("/");
             }
         } catch (error) {
             alert("backend is not connected");
