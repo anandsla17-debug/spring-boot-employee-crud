@@ -18,7 +18,7 @@ function Adminlogin(){
       
 if(datas=="login successful"){
     alert(datas);
-    navigate("/home")
+    navigate("/home/employeeadd")
 }else{
 alert(datas)
 }
