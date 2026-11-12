@@ -7,6 +7,8 @@ import AdminRegister from "./Admin/AdminRegister";
 import Adminlogin from "./Admin/AdminLogin";
 import Home from "./Admin/Home";
 import Employeeviewall from "./Employee/Employeeviewall";
+import Employeeupdate from "./Employee/Employeeupdate";
+import Employeedelete from "./Employee/Employeedelete";
 function App() {
   
   return(
@@ -18,6 +20,8 @@ function App() {
       <Route path="/home" element={<Home></Home>}>
         <Route path="employeeadd" element={<Employeeadd></Employeeadd>}></Route>
         <Route path="view" element={<Employeeviewall></Employeeviewall>}></Route>
+        <Route path="update" element={<Employeeupdate></Employeeupdate>}></Route>
+        <Route path="delete" element={<Employeedelete></Employeedelete>}></Route>
       </Route>
     </Routes>
 
