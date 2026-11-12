@@ -1,8 +1,16 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function Employeedelete(){
-    const[id,setid]=useState("");
+     const location=useLocation();
+     const employee=location.state;
+
+         console.log(employee);
+    const[id,setid]=useState(employee.empid);
+   
+        
+      
     const deletelogic=async()=>{
         try {
             const response= await axios.delete(`http://localhost:8080/employee/delete/${id}`);
@@ -17,7 +25,7 @@ function Employeedelete(){
             <div className="container border border-primary mt-2 p-3 rounded" style={{width:"300px"}}>
                 <p className="h4 text-center">Delete Employee form</p>
                 <label className="form-label">Employee id</label>
-                <input onChange={(e)=>setid(e.target.value)} className="form-control mt-2" type="number" placeholder="Enter your empid"></input>
+                <input onChange={(e)=>setid(e.target.value)} value={id}  className="form-control mt-2" type="number" placeholder="Enter your empid"></input>
                 <button className="btn btn-danger w-100 mt-2" onClick={deletelogic}>Delete</button>
             </div>
                
