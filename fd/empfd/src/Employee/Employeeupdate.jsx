@@ -6,14 +6,14 @@ function Employeeupdate(){
 const location=useLocation();
 const employee=location.state;
 
-    const[id,setid]=useState(employee==null?0:employee.empid);
+    const[id,setid]=useState(employee==null?"":employee.empid);
        const[name,setname]=useState(employee==null?"Enter your employee name":employee.employeename);
-      const[age,setage]=useState(employee==null?0:employee.age);
+      const[age,setage]=useState(employee==null?"":employee.age);
       const [password,setpassword]=useState(employee==null?"enter your password":employee.password);
       const [time,settime]=useState(employee==null?"Enter your time":employee.shifttime);
-      const[year,setyearofdays]=useState(employee==null?0:employee.yearofdays);
+      const[year,setyearofdays]=useState(employee==null?"":employee.yearofdays);
       const[salary,setsalary]=useState(employee==null?"enter your salary":employee.salary);
-      const[phone,setphone]=useState(employee==null?0:employee.phone);
+      const[phone,setphone]=useState(employee==null?"":employee.phone);
 
       const update=async()=>{
         const employeeupdate={

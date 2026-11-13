@@ -7,7 +7,7 @@ function Employeedelete(){
      const employee=location.state;
 
          console.log(employee);
-    const[id,setid]=useState(employee==null?0:employee.empid);
+    const[id,setid]=useState(employee==null?"":employee.empid);
    
         
       
